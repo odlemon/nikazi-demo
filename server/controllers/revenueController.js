@@ -174,7 +174,7 @@ const updateRevenueBranch = asyncHandler(async (req, res) => {
 
       // Update the branch's achieved and log history if provided
       if (typeof achieved === 'number') {
-        branchToUpdate.achieved = achieved;
+        branchToUpdate.achieved += achieved; // Increment the existing achieved value
         branchToUpdate.achievedHistory.push({
           value: achieved,
           date: new Date(),
